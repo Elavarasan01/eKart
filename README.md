@@ -4,8 +4,8 @@
 
 # Features
 Homepage:
-=>View featured products.
-=>View Recommended products.
+=>View featured products,
+=>View Recommended products,
 =>Filter and sort products.
 
 # installation
@@ -24,8 +24,8 @@ Install dependencies:
 
  # Technologies Used
 
-React
-React Router
-Context API for State Management
-HTML5
+React,
+React Router,
+Context API for State Management,
+HTML5,
 CSS3       
