@@ -15,7 +15,7 @@ export const CartProvider = ({ children }) => {
 
     const removeFromCart = (itemId) => {
         const index = cartItems.findIndex(item => item.id === itemId);
-        
+
         if (index !== -1) {
             const updatedCartItems = [...cartItems];
             updatedCartItems.splice(index, 1);

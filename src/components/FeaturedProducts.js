@@ -55,7 +55,7 @@ function FeaturedProducts() {
           </div>
           <div className="sort-container">
             <label>
-              Sort by : 
+              Sort by :
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
