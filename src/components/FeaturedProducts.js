@@ -19,6 +19,7 @@ function FeaturedProducts() {
   const [sortBy, setSortBy] = useState('');
 
   const handleAddToCart = (product) => {
+    console.log(product)
     addToCart(product);
   };
 

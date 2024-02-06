@@ -6,6 +6,12 @@ import { useCart } from '../components/contextApi';
 
 function RecommendedProducts() {
     const { addToCart } = useCart();
+
+    const handleAddToCart = (product) => {
+        console.log(product)
+        addToCart(product);
+      };
+
     const recommendedProducts = [
         { id: 1, name: 'Bike Boy', price: 2450.99, imageUrl: BikeBoy },
         { id: 2, name: 'Red V5', price: 6634.99, imageUrl: RedBull },
@@ -20,7 +26,7 @@ function RecommendedProducts() {
                         <img src={product.imageUrl} alt={product.name} />
                         <h3>{product.name}</h3>
                         <p>${product.price.toFixed(2)}</p>
-                        <button onClick={addToCart}>Add to Cart</button>
+                        <button onClick={()=>handleAddToCart(product)}>Add to Cart</button>
                     </div>
                 ))}
             </div>

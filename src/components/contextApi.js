@@ -7,15 +7,39 @@ export const useCart = () => {
 };
 
 export const CartProvider = ({ children }) => {
-    const [cartCount, setCartCount] = useState(0);
+    const [cartItems, setCartItems] = useState([]);
 
-    const addToCart = () => {
-        setCartCount(cartCount + 1);
+    const addToCart = (item) => {
+        setCartItems([...cartItems, item]);
+    };
+
+    const removeFromCart = (itemId) => {
+        const index = cartItems.findIndex(item => item.id === itemId);
+        
+        if (index !== -1) {
+            const updatedCartItems = [...cartItems];
+            updatedCartItems.splice(index, 1);
+            setCartItems(updatedCartItems);
+        }
+    };
+
+    const clearCart = () => {
+        setCartItems([]);
+    };
+
+    const cartCount = cartItems.length;
+
+    const getTotalPrice = () => {
+        return cartItems.reduce((total, item) => total + item.price, 0);
     };
 
     const contextValue = {
+        cartItems,
         cartCount,
         addToCart,
+        removeFromCart,
+        clearCart,
+        getTotalPrice,
     };
 
     return (
